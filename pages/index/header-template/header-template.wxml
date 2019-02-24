@@ -1,0 +1,7 @@
+<template name='headerTemplate'>
+  <view class='header-container'>
+    <text class='week'>周六</text>
+    <text class='city'>南京市</text>
+    <text class='date'>02月23日</text>
+  </view>
+</template>

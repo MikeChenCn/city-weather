@@ -1,4 +1,9 @@
 <!--index.wxml-->
+<import src='header-template/header-template.wxml' />
+<import src='weatherLive-template/weatherLive-template.wxml' />
+
 <view class="container">
-  sfddfsd
+  <template is='headerTemplate' />
+  <template is='weatherLiveTemplate' />
+
 </view>

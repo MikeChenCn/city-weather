@@ -1,0 +1,14 @@
+<template name='weatherLiveTemplate'>
+  <view>
+    <text class='temp'>6度</text>
+    <view>
+      <image></image>
+      <text class='desc'>多云</text>|
+    </view>
+    <view class='wind'>
+      <text class=''>北风</text>
+      <text>微风</text>
+    </view>
+    <text class='pm'>166中度污染</text>
+  </view>
+</template>
