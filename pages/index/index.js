@@ -19,6 +19,8 @@ Page({
       success: function (data) {
         console.log('查询成功');
         var currentWeather = data;
+
+        
         console.log(currentWeather);
 
         that.setData({

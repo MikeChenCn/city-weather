@@ -1,1 +1,21 @@
-/* pages/index/weatherLive-template/weatherLive-template.wxss */
+.weatherLive-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.temp{
+  font-size: 90rpx;
+  height: 172rpx;
+  line-height: 172rpx;
+}
+.weatherImg{
+  width: 134rpx;
+  height: 80rpx;
+  margin: 40rpx 0;
+}
+.desc{
+  padding-bottom: 40rpx;
+}
+.wind{
+  padding-bottom: 40rpx;
+}

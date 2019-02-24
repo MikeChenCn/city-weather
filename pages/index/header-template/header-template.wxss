@@ -1,0 +1,25 @@
+.header-container {
+  display: flex;
+  flex-direction: row;
+  height: 120rpx;
+  line-height: 120rpx;
+  /* justify-content: space-around; */
+}
+
+.week {
+  width: 200rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+
+.city {
+  font-size: 48rpx;
+  flex: 1;
+  text-align: center;
+}
+
+.date {
+  width: 200rpx;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+}

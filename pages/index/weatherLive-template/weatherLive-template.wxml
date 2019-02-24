@@ -1,13 +1,11 @@
 <template name='weatherLiveTemplate'>
-  <view>
+  <view class='weatherLive-container'>
     <text class='temp'>6度</text>
-    <view>
-      <image></image>
-      <text class='desc'>多云</text>|
-    </view>
+    <image class='weatherImg' src='../../img/duoyun.png'></image>
+    <text class='desc'>多云</text>
     <view class='wind'>
-      <text class=''>北风</text>
-      <text>微风</text>
+      <text class='wind-dire'>北风</text>
+      <text class='wind-pow'>微风</text>
     </view>
     <text class='pm'>166中度污染</text>
   </view>
