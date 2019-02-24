@@ -1,0 +1,11 @@
+<template name='lifeTemplate'>
+  <view class='life--container'>
+    <view class='life-title'>生活指数</view>
+    <view class='life-content'>
+      <view class='life-item' wx:for='{{curLifeDate}}' wx:for-item='item' wx:key='index'>
+        <view class='life-item-title'>{{item.tipt}}：{{item.title}}</view>
+        <text class='life-item-content'>{{item.des}}</text>
+      </view>
+    </view>
+  </view>
+</template>

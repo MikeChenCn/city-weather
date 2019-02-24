@@ -1,42 +1,12 @@
 <!--index.wxml-->
 <import src='header-template/header-template.wxml' />
 <import src='weatherLive-template/weatherLive-template.wxml' />
+<import src='scroll-template/scroll-template.wxml' />
+<import src='life-template/life-template.wxml' />
 
 <view class="container">
-  <template is='headerTemplate' />
-  <template is='weatherLiveTemplate' />
-
-  <scroll-view class="box" scroll-x="true" >
-    <view class="box-item">
-      <view>
-        <text>今天</text>
-        <text>12/-1</text>
-      </view>
-      <view>
-        <text>多云</text>
-        <image></image>
-      </view>
-    </view>
-    <view class="box-item">
-      <view>
-        <text>今天</text>
-        <text>12/-1</text>
-      </view>
-      <view>
-        <text>多云</text>
-        <image></image>
-      </view>
-    </view>
-    <view class="box-item">
-      <view>
-        <text>今天</text>
-        <text>12/-1</text>
-      </view>
-      <view>
-        <text>多云</text>
-        <image></image>
-      </view>
-    </view>
-  </scroll-view>
-
+  <template is='headerTemplate' data='{{...curData}}' />
+  <template is='weatherLiveTemplate' data='{{...currentWeather,num:num}}' />
+  <template is='scrollTemplate' />
+  <template is='lifeTemplate' data='{{curLifeDate}}' />
 </view>

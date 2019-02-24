@@ -1,0 +1,9 @@
+.life-title{
+  font-size: 32rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.life-item{
+  line-height: 40rpx; 
+  padding: 10rpx;
+}

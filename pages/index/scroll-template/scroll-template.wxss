@@ -1,0 +1,29 @@
+.fr{
+  float: right;
+}
+.scroll {
+    width:100vw;
+    height: 200rpx;
+    white-space: nowrap;
+    border: 1px solid red;
+    box-sizing: border-box
+}
+.scroll-item {
+    width: 45%;
+    height:100%;
+    padding:0 20rpx;
+    border:2rpx solid green;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.item-top{
+  height: 100rpx;
+ line-height: 100rpx; 
+} 
+.item-under{
+
+} 
+.item-under image{
+  width: 110rpx;
+  height: 50rpx;
+} 
