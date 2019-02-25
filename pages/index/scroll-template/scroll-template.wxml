@@ -1,5 +1,8 @@
 <template name='scrollTemplate'>
-  <scroll-view class="scroll" scroll-x="true">
+<view>
+<view class='4天预报'>
+</view>
+<scroll-view class="scroll" scroll-x="true">
     <view class="scroll-item">
       <view class='item-top'>
         <text>今天</text>
@@ -31,4 +34,6 @@
       </view>
     </view>
   </scroll-view>
+</view>
+  
 </template>

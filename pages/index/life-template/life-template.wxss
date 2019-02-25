@@ -1,3 +1,6 @@
+.life--container{
+  background: rgba(0, 0, 0, 0.6);
+}
 .life-title{
   font-size: 32rpx;
   height: 70rpx;

@@ -4,3 +4,6 @@
 @import 'scroll-template/scroll-template.wxss';
 @import 'life-template/life-template.wxss';
 
+page{
+  color: rgb(255, 255, 255)
+}
