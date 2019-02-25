@@ -20,19 +20,22 @@ Page({
       },
       success: function(data) {
         console.log('查询成功');
-        // console.log(currentWeather);
+       
 
         var currentWeather = data.currentWeather[0];
         var curDate = currentWeather.date.split(' ');
         var week = curDate[0];
         var date = curDate[1];
-        var num = curDate[2].replace(/[^0-9]/ig, "");//获取实时温度
+        var num = curDate[2].replace(/[^0-9]/ig, ""); //获取实时温度
+
+        var originalData = data.originalData.results[0].weather_data;
+        console.log(originalData);
 
         var curCity = currentWeather.currentCity;
-        var originalData = data.originalData.results[0];
-        var curLifeDate = originalData.index;
-        var curData={
-          week:week,
+        var origData = data.originalData.results[0];
+        var curLifeDate = origData.index;
+        var curData = {
+          week: week,
           date: date,
           curCity: curCity
         }
@@ -42,13 +45,13 @@ Page({
 
         that.setData({
           currentWeather: currentWeather,
-          originalData: originalData,
           curLifeDate: curLifeDate,
-          week:week,
-          date:date,
+          week: week,
+          date: date,
           curCity: curCity,
           num: num,
-          curData: curData
+          curData: curData,
+          originalData: originalData
         });
       }
     });

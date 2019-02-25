@@ -1,0 +1,9 @@
+<view>
+<view><input placeholder="输入关键字" auto-focus type="text" bindinput="bindKeyInput"/><button>清空</button></view>
+<view>
+<text>猜你想找</text>
+<view>
+<text>{{sugData}}</text>
+</view>
+</view>
+</view>

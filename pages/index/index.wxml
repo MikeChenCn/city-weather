@@ -4,9 +4,11 @@
 <import src='scroll-template/scroll-template.wxml' />
 <import src='life-template/life-template.wxml' />
 
-<view class="container">
+<view class="container" style='background:url("../../img/bg2.jpg") cover'>
   <template is='headerTemplate' data='{{...curData}}' />
   <template is='weatherLiveTemplate' data='{{...currentWeather,num:num}}' />
-  <template is='scrollTemplate' />
+  <template is='scrollTemplate' data='{{originalData}}' />
   <template is='lifeTemplate' data='{{curLifeDate}}' />
+
+  <view class='developer'>开发者：chen</view>
 </view>

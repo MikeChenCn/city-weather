@@ -1,39 +1,20 @@
 <template name='scrollTemplate'>
-<view>
-<view class='4天预报'>
-</view>
-<scroll-view class="scroll" scroll-x="true">
-    <view class="scroll-item">
-      <view class='item-top'>
-        <text>今天</text>
-        <text class='fr'>12/-1 °C</text>
-      </view>
-      <view class='item-under'>
-        <text>多云</text>
-        <image src='../../img/duoyun.png' class='fr'></image>
-      </view>
-    </view>
-    <view class="scroll-item">
-      <view class='item-top'>
-        <text>今天</text>
-        <text class='fr'>12/-1 °C</text>
-      </view>
-      <view class='item-under'>
-        <text>多云</text>
-        <image src='../../img/duoyun.png' class='fr'></image>
-      </view>
-    </view>
-    <view class="scroll-item">
-      <view class='item-top'>
-        <text>今天</text>
-        <text class='fr'>12/-1 °C</text>
-      </view>
-      <view class='item-under'>
-        <text>多云</text>
-        <image src='../../img/duoyun.png' class='fr'></image>
-      </view>
-    </view>
-  </scroll-view>
-</view>
-  
+  <view class='scroll-container'>
+    <view class='scroll-title'>4天预报</view>
+    <scroll-view class="scroll" scroll-x="true">
+      <!-- <block wx:for='{{originalData}}' wx:for-item='item' wx:key='index'> -->
+        <view class="scroll-item" wx:for='{{originalData}}' wx:for-item='item' wx:key='index'>
+          <view class='item-top'>
+            <text>{{item.date}}</text>
+            <text class='fr'>{{item.temperature}}</text>
+          </view>
+          <view class='item-under'>
+            <text>{{item.weather}}</text>
+            <image src='{{item.dayPictureUrl}}' class='fr'></image>
+          </view>
+        </view>
+      <!-- </block> -->
+    </scroll-view>
+  </view>
+
 </template>

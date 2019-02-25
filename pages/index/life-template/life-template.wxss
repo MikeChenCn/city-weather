@@ -1,5 +1,6 @@
 .life--container{
   background: rgba(0, 0, 0, 0.6);
+  padding: 20rpx;
 }
 .life-title{
   font-size: 32rpx;
@@ -9,4 +10,5 @@
 .life-item{
   line-height: 40rpx; 
   padding: 10rpx;
+  border-top: 1rpx solid rgb(255, 255, 255)
 }

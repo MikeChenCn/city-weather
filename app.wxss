@@ -3,3 +3,7 @@ page{
   font-size: 28rpx;
   color: #000;
 }
+
+.developer{
+  text-align: center
+}

@@ -2,13 +2,20 @@
   float: right;
 }
 
+.scroll-container {
+  background: rgba(0, 0, 0, 0.6);
+}
+.scroll-title{
+
+  text-align: center;
+  border-bottom: 1rpx solid rgb(255, 255, 255);
+}
 .scroll {
   width: 100vw;
   height: 200rpx;
   white-space: nowrap;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.6);
   margin-bottom: 20rpx;
 }
 
@@ -19,6 +26,7 @@
   /* border:2rpx solid green; */
   box-sizing: border-box;
   display: inline-block;
+  border-right: 1rpx solid rgb(255, 255, 255)
 }
 
 .item-top {
@@ -26,8 +34,8 @@
   line-height: 100rpx;
 }
 
-.item-under {
-}
+/* .item-under {
+} */
 
 .item-under image {
   width: 110rpx;

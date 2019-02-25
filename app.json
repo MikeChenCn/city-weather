@@ -1,5 +1,6 @@
 {
-  "pages":[
+  "pages": [
+    "pages/city/city",
     "pages/index/index"
   ],
   "permission": {
@@ -7,10 +8,10 @@
       "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
   },
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "天气查询",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }
