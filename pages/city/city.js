@@ -31,6 +31,15 @@ Page({
   bindKeyInput: function (e) {
 
   },
+  onTapCity:function(event){
+    
+    console.log(event._relatedInfo.anchorTargetText
+);
+
+    wx.redirectTo({
+      url: '../index/index?id=1'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

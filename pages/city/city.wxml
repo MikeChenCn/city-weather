@@ -5,13 +5,13 @@
   </view>
   <view class='city-area'>
     <view class='city-title'>当前城市</view>
-    <view class='city-item'>南京</view>
+    <view class='city-item' bindtap='onTapCity'>南京</view>
   </view>
   <view class='city-area'>
     <view class='city-title'>猜你想找</view>
     <view class='cityList'>
       <block wx:for='{{hotCities}}' wx:for-item='item' wx:key='{{item.id}}'>
-        <text class='city-item'>{{item.name}}</text>
+        <text class='city-item' bindtap='onTapCity'>{{item.name}}</text>
       </block>
     </view>
     <view class='cityList'>
@@ -20,7 +20,7 @@
           <view class='city-title'>{{index}}</view>
           <view class='cityList'>
             <block wx:for='{{item}}' wx:for-item='innerItem' wx:key='{{innerItem.id}}'>
-              <text class='city-item'>{{innerItem.name}}</text>
+              <text class='city-item' bindtap='onTapCity'>{{innerItem.name}}</text>
             </block>
           </view>
         </view>
