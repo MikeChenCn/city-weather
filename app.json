@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/city/city",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/city/city"
   ],
   "permission": {
     "scope.userLocation": {
-      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+      "desc": "你的位置信息将用于小程序获取当地天气"
     }
   },
   "window": {
