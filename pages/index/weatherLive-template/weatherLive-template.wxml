@@ -1,7 +1,7 @@
 <template name='weatherLiveTemplate'>
   <view class='weatherLive-container'>
     <text class='temp'>{{num}}度</text>
-    <image class='weatherImg' src='../../img/duoyun.png'></image>
+    <image class='weatherImg' src='{{dayImg}}'></image>
     <text class='desc'>{{weatherDesc}}</text>
     <text class='wind'>{{wind}}</text>
     <!-- <text class='pm'>PM2.5:{{pm25}}</text> -->

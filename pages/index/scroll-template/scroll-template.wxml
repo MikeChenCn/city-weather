@@ -9,7 +9,7 @@
             <text class='fr'>{{item.temperature}}</text>
           </view>
           <view class='item-under'>
-            <text>{{item.weather}}</text>
+            <view class='item-under-weather'>{{item.weather}}</view>
             <image src='{{item.dayPictureUrl}}' class='fr'></image>
           </view>
         </view>

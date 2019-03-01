@@ -34,8 +34,15 @@
   line-height: 100rpx;
 }
 
-/* .item-under {
-} */
+.item-under{
+  display: flex;
+}
+.item-under-weather{
+  width: 100rpx;
+  flex: 1;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
 
 .item-under image {
   width: 110rpx;
