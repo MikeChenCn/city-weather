@@ -9,11 +9,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    sugData: '',
-    inputValue:null,
-    results: [],
-    isShow: true,
-    hasNoData:true
+    inputValue:null,//搜索框的值
+    results: [],//搜索城市的结果
+    isNoShow: false,//判断搜索结果是否显示
+    hasNoData:true //判断有无搜索结果显示
   },
 
   /**
@@ -29,12 +28,14 @@ Page({
       cities: cities
     });
   },
+  //input的值变化响应事件
   bindKeyInput: function(event) {
-    let keyword = event.detail.value;
+    let keyword = event.detail.value; 
     let cities = this.data.cities;
 
     let results = [];
 
+  //根据input输入值生成搜索的城市结果
     for (let i in cities) {
       cities[i].forEach((value) => {
         if (value.spell.indexOf(keyword) > -1 || value.name.indexOf(keyword) > -1) {
@@ -42,25 +43,38 @@ Page({
         }
       })
     }
+    //如果输入值为空时，搜索结果框隐藏，否则打开
     if (!keyword) {
-      results = []
+      this.setData({
+        isNoShow: false
+      })
+    }else{
+      this.setData({
+        isNoShow:true
+      })
     }
 
+    //判断是否搜索到城市
+    if (!results.length) {
+      this.setData({
+        hasNoData: true
+      })
+    }else{
+      this.setData({
+        hasNoData: false
+      })
+    }
+  //刷新搜索结果
     this.setData({
       results: results
     })
-
-    if(this.data.results.length){
-      this.setData({
-        hasNoData:false
-      })
-    }
-    console.log(results)
   },
+  //取消清空数据
   cancleInput() {
     this.setData({
       inputValue: null,
-      isShow: true
+      isNoShow: false,
+      results:[]
     })
   },
   onTapCity: function(event) {
