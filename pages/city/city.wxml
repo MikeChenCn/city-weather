@@ -1,7 +1,13 @@
 <view>
   <view class='searchBox'>
-    <input placeholder="输入关键字" auto-focus type="text" bindinput="bindKeyInput" />
-    <button class='clear'>清空</button>
+    <input placeholder="请输入需要查询的城市名称" auto-focus type="text" bindinput="bindKeyInput" confirm-type='search' value='{{inputValue}}' />
+    <button class='clear' bindtap='cancleInput'>取消</button>
+  </view>
+  <view class='searchResult' wx:if='{{!isShow}}'>
+    <block wx:for='{{results}}' wx:for-item='item' wx:key='{{item.id}}'>
+      <text class='city-item' bindtap='onTapCity'>{{item.name}}</text>
+    </block>
+    <view wx:if='{{hasNoData}}'>没有搜到的城市~~~</view>
   </view>
   <view class='city-area'>
     <view class='city-title'>当前城市</view>
@@ -14,7 +20,7 @@
         <text class='city-item' bindtap='onTapCity'>{{item.name}}</text>
       </block>
     </view>
-    <view class='cityList'>
+    <view class='cityList' display='none'>
       <block wx:for='{{cities}}' wx:for-item='item' wx:key='{{index}}'>
         <view class='city-area'>
           <view class='city-title'>{{index}}</view>

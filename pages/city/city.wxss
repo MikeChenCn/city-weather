@@ -4,6 +4,7 @@
   padding: 10rpx 20rpx;
 }
 .searchBox input{
+  height: 50rpx;
   flex: 1;
   background: rgb(223, 219, 217);
 }
@@ -14,6 +15,15 @@
   line-height: 50rpx;
   font-size: 30rpx;
   padding: 0;
+}
+
+.searchResult{
+  position: absolute;
+  top: 90rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
 }
 .city-title{
   padding-left: 20rpx;
