@@ -1,6 +1,7 @@
-//index.js
 //获取应用实例
 const app = getApp();
+const globalData = app.globalData;
+const key = globalData.key;
 const bmap = require('../../libs/bmap-wx.js');
 
 Page({
@@ -15,8 +16,9 @@ Page({
     let that = this;
 
     let BMap = new bmap.BMapWX({
-      ak: '6BvK0e6fxvzYVPN2TPNQP5Iy7g0RHPpV'
+      ak: key
     });
+
     BMap.weather({
       location: that.data.coorData,
       fail: function (data) {
@@ -27,6 +29,7 @@ Page({
       }
     });
   },
+  //获取天气成功后，渲染数据
   success(data) {
     console.log(data);
     var currentWeather = data.currentWeather[0];
@@ -48,6 +51,7 @@ Page({
     }
     originalData[0].date = '今天';
 
+  //刷新数据
     this.setData({
       curData: curData,
       currentWeather: currentWeather,
@@ -63,11 +67,13 @@ Page({
       console.log(this.data.targetCity)
       var that = this;
       this.getCityCoordinate(this.data.targetCity); //实现城市坐标查询
+
       let BMap = new bmap.BMapWX({
-        ak: '6BvK0e6fxvzYVPN2TPNQP5Iy7g0RHPpV'
+        ak: key
       });
+      //根据经纬度查询对应的城市天气
       BMap.weather({
-        location: that.data.coorData,
+        // location: that.data.coorData,
         fail: function(data) {
           console.log('查询失败')
         },
@@ -76,8 +82,6 @@ Page({
         }
       });
     }
-
-
   },
   onToCityList() {
     wx.navigateTo({
@@ -97,7 +101,7 @@ Page({
     let searchParam = {
       address: param,
       output: 'json',
-      key: '6BvK0e6fxvzYVPN2TPNQP5Iy7g0RHPpV'
+      key: key
     };
     wx.request({
       url: 'https://api.map.baidu.com/geocoder',
@@ -105,7 +109,7 @@ Page({
       header: {
         "content-type": "application/json"
       },
-      method: 'GET',
+      method: 'post',
       success(res) {
         if (res.data.status === 'OK') {
           if (res.data.result.length===0){
@@ -120,6 +124,9 @@ Page({
         } else {
           that.failShowToast()
         }
+      },
+      fail(data){
+        console.log(data)
       }
     })
   }
