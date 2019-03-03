@@ -7,28 +7,33 @@
 }
 
 .week {
-  width: 200rpx;
+  width: 100rpx;
   padding-left: 30rpx;
   box-sizing: border-box;
 }
 
 .city {
-  display: block;
-  font-size: 48rpx;
   flex: 1;
-  text-align: center;
+  display: flex;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+.city-name{
+  display: inline-block;
+  font-size: 48rpx;
 }
 
-.city::after {
+.city-icon {
   width:0;
 	height:0;
-	border-right:50px solid transparent;
-	border-left:50px solid transparent;
-	border-top:50px solid red;
+	border-right:15rpx solid transparent;
+	border-left:15rpx solid transparent;
+	border-top:15rpx solid #fff;
+  margin: 0 auto;
 }
 
 .date {
-  width: 200rpx;
+  width: 180rpx;
   padding-left: 40rpx;
   box-sizing: border-box;
 }

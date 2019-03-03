@@ -2,7 +2,6 @@
   <view class='scroll-container'>
     <view class='scroll-title'>4天预报</view>
     <scroll-view class="scroll" scroll-x="true">
-      <!-- <block wx:for='{{originalData}}' wx:for-item='item' wx:key='index'> -->
         <view class="scroll-item" wx:for='{{originalData}}' wx:for-item='item' wx:key='index'>
           <view class='item-top'>
             <text>{{item.date}}</text>
@@ -13,7 +12,6 @@
             <image src='{{item.dayPictureUrl}}' class='fr'></image>
           </view>
         </view>
-      <!-- </block> -->
     </scroll-view>
   </view>
 

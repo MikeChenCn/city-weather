@@ -14,6 +14,12 @@ Page({
     console.log(this.data.curCity)
 
   },
+  onShareAppMessage: function () {
+    return {
+      title: '出行天气早知道',
+      path: '/index/index?id=123'
+    }
+  },
   onUnload:function(){
     wx.removeStorageSync('currentCity')
   },
