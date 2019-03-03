@@ -11,19 +11,6 @@ Page({
   onLoad: function(options) {
     this.getCurWeather();
 
-    // wx.request({
-    //   url: 'https://api.map.baidu.com/geocoder/v2/?address=北京&output=json&ak=6BvK0e6fxvzYVPN2TPNQP5Iy7g0RHPpV', 
-    //   data: {
-    //     x: '',
-    //     y: ''
-    //   },
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success(res) {
-    //     console.log(res.data)
-    //   }
-    // })
   },
   //获取当前天气
   getCurWeather(){
@@ -82,19 +69,19 @@ Page({
       var that = this;
       this.getCityCoordinate(this.data.targetCity); //实现城市坐标查询
 
-      let BMap = new bmap.BMapWX({
-        ak: key
-      });
-      //根据经纬度查询对应的城市天气
-      BMap.weather({
-        location: that.data.coorData,
-        fail: function(data) {
-          console.log('查询失败')
-        },
-        success: (data) => {
-          this.success(data)
-        }
-      });
+      // let BMap = new bmap.BMapWX({
+      //   ak: key
+      // });
+      // //根据经纬度查询对应的城市天气
+      // BMap.weather({
+      //   location: that.data.coorData,
+      //   fail: function(data) {
+      //     console.log('查询失败')
+      //   },
+      //   success: (data) => {
+      //     this.success(data)
+      //   }
+      // });
     }
   },
   
