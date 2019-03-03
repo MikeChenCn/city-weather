@@ -9,7 +9,21 @@ Page({
     coorData: ''
   },
   onLoad: function(options) {
-    this.getCurWeather()
+    this.getCurWeather();
+
+    // wx.request({
+    //   url: 'https://api.map.baidu.com/geocoder/v2/?address=北京&output=json&ak=6BvK0e6fxvzYVPN2TPNQP5Iy7g0RHPpV', 
+    //   data: {
+    //     x: '',
+    //     y: ''
+    //   },
+    //   header: {
+    //     'content-type': 'application/json' // 默认值
+    //   },
+    //   success(res) {
+    //     console.log(res.data)
+    //   }
+    // })
   },
   //获取当前天气
   getCurWeather(){
@@ -73,7 +87,7 @@ Page({
       });
       //根据经纬度查询对应的城市天气
       BMap.weather({
-        // location: that.data.coorData,
+        location: that.data.coorData,
         fail: function(data) {
           console.log('查询失败')
         },
@@ -83,6 +97,7 @@ Page({
       });
     }
   },
+  
   onToCityList() {
     wx.navigateTo({
       url: '../city/city',
@@ -101,17 +116,18 @@ Page({
     let searchParam = {
       address: param,
       output: 'json',
-      key: key
+      ak: key
     };
+
     wx.request({
-      url: 'https://api.map.baidu.com/geocoder',
+      url: 'https://api.map.baidu.com/geocoder/v2/?address=北京&output=json&ak=6BvK0e6fxvzYVPN2TPNQP5Iy7g0RHPpV',
       data: searchParam,
       header: {
         "content-type": "application/json"
       },
-      method: 'post',
+      method: 'GET',
       success(res) {
-        if (res.data.status === 'OK') {
+        if (res.data.status === 0) {
           if (res.data.result.length===0){
             that.failShowToast()
           } else {
@@ -120,6 +136,20 @@ Page({
             that.setData({
               coorData: coorData
             })
+
+            let BMap = new bmap.BMapWX({
+              ak: key
+            });
+            //根据经纬度查询对应的城市天气
+            BMap.weather({
+              location: that.data.coorData,
+              fail: function (data) {
+                console.log('查询失败')
+              },
+              success:(data)=>{
+                that.success(data)
+              }
+            });
           }
         } else {
           that.failShowToast()
