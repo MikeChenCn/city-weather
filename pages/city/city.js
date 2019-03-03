@@ -23,10 +23,16 @@ Page({
     let hotCities = cityList.hotCities;
     let cities = cityList.cities;
 
+    //获取存在缓存中的当前城市
+    var currentCity=wx.getStorageSync('currentCity');
+
     this.setData({
       hotCities: hotCities,
-      cities: cities
+      cities: cities,
+      currentCity: currentCity
     });
+
+    
   },
   //input的值变化响应事件
   bindKeyInput: function(event) {

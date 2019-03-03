@@ -11,7 +11,7 @@
   </view>
   <view class='city-area'>
     <view class='city-title'>当前城市</view>
-    <view class='city-item' bindtap='onTapCity'>南京</view>
+    <view class='city-item' bindtap='onTapCity'>{{currentCity}}</view>
   </view>
   <view class='city-area'>
     <view class='city-title'>猜你想找</view>

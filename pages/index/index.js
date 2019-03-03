@@ -11,6 +11,11 @@ Page({
   onLoad: function(options) {
     this.getCurWeather();
 
+    console.log(this.data.curCity)
+
+  },
+  onUnload:function(){
+    wx.removeStorageSync('currentCity')
   },
   //获取当前天气
   getCurWeather(){
@@ -19,14 +24,16 @@ Page({
     let BMap = new bmap.BMapWX({
       ak: key
     });
-
     BMap.weather({
       location: that.data.coorData,
       fail: function (data) {
         console.log('查询失败')
       },
       success: (data) => {
-        this.success(data)
+        this.success(data);
+        //获取当前城市，并存入缓存
+        let currentCity=data.currentWeather[0].currentCity;
+        wx.setStorageSync('currentCity', currentCity)
       }
     });
   },
@@ -68,20 +75,6 @@ Page({
       console.log(this.data.targetCity)
       var that = this;
       this.getCityCoordinate(this.data.targetCity); //实现城市坐标查询
-
-      // let BMap = new bmap.BMapWX({
-      //   ak: key
-      // });
-      // //根据经纬度查询对应的城市天气
-      // BMap.weather({
-      //   location: that.data.coorData,
-      //   fail: function(data) {
-      //     console.log('查询失败')
-      //   },
-      //   success: (data) => {
-      //     this.success(data)
-      //   }
-      // });
     }
   },
   
@@ -107,7 +100,7 @@ Page({
     };
 
     wx.request({
-      url: 'https://api.map.baidu.com/geocoder/v2/?address=北京&output=json&ak=6BvK0e6fxvzYVPN2TPNQP5Iy7g0RHPpV',
+      url: 'https://api.map.baidu.com/geocoder/v2/',
       data: searchParam,
       header: {
         "content-type": "application/json"
