@@ -15,6 +15,8 @@
 .city {
   flex: 1;
   display: flex;
+  padding-left: 30rpx;
+  align-items: center;
   white-space: nowrap;
   text-overflow:ellipsis;
 }
@@ -29,7 +31,6 @@
 	border-right:15rpx solid transparent;
 	border-left:15rpx solid transparent;
 	border-top:15rpx solid #fff;
-  margin: 0 auto;
 }
 
 .date {

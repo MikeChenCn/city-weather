@@ -45,13 +45,10 @@ Page({
   },
   //获取天气成功后，渲染数据
   success(data) {
-    console.log(data);
     var currentWeather = data.currentWeather[0];
     var curDates = currentWeather.date.split(' ');
 
     var originalData = data.originalData.results[0].weather_data;
-    console.log(originalData)
-
 
     var origData = data.originalData.results[0];
     var curLifeDate = origData.index;
