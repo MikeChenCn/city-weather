@@ -2,7 +2,7 @@
 const app = getApp();
 const globalData = app.globalData;
 const key = globalData.key;
-const bmap = require('../../libs/bmap-wx.js');
+const bmap = require('../../libs/bmap-wx.min.js');
 
 Page({
   data: {
@@ -10,9 +10,6 @@ Page({
   },
   onLoad: function(options) {
     this.getCurWeather();
-
-    console.log(this.data.curCity)
-
   },
   onShareAppMessage: function () {
     return {

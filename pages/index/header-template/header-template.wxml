@@ -1,7 +1,7 @@
 <template name='headerTemplate'>
   <view class='header-container'>
-    <view class='city'>
-      <view class='city-name' bindtap='onToCityList'>{{curCity}}</view>
+    <view class='city' bindtap='onToCityList'>
+      <view class='city-name'>{{curCity}}</view>
       <view class='city-icon'></view>
     </view>
     <text class='week'>{{week}}</text>
