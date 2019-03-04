@@ -1,36 +1,42 @@
-<view>
+<view class='city-container'>
+  <!-- <scroll-view scroll-y='true'> -->
   <view class='searchBox'>
     <input placeholder="请输入需要查询的城市名称" auto-focus type="text" bindinput="bindKeyInput" confirm-type='search' value='{{inputValue}}' />
     <button class='clear' bindtap='cancleInput'>取消</button>
   </view>
   <view class='searchResult' wx:if='{{isNoShow}}'>
-    <block wx:for='{{results}}' wx:for-item='item' wx:key='{{item.id}}'>
-      <text class='city-item' bindtap='onTapCity'>{{item.name}}</text>
-    </block>
-    <view wx:if='{{hasNoData}}'>~~~没有搜到城市~~~</view>
-  </view>
-  <view class='city-area'>
-    <view class='city-title'>当前城市</view>
-    <view class='city-item' bindtap='onTapCity'>{{currentCity}}</view>
-  </view>
-  <view class='city-area'>
-    <view class='city-title'>猜你想找</view>
-    <view class='cityList'>
-      <block wx:for='{{hotCities}}' wx:for-item='item' wx:key='{{item.id}}'>
+    <scroll-view scroll-y='true' height='100%'>
+      <block wx:for='{{results}}' wx:for-item='item' wx:key='{{item.id}}'>
         <text class='city-item' bindtap='onTapCity'>{{item.name}}</text>
       </block>
+      <view wx:if='{{hasNoData}}'>~~~sorry 没有搜到城市~~~</view>
+    </scroll-view>
+  </view>
+  <view class='cityLists' wx:if='{{!isNoShow}}'>
+    <view class='city-area'>
+      <view class='city-title'>当前定位城市</view>
+      <view class='city-item' bindtap='onTapCity'>{{currentCity}}</view>
     </view>
-    <view class='cityList' display='none'>
-      <block wx:for='{{cities}}' wx:for-item='item' wx:key='{{index}}'>
-        <view class='city-area'>
-          <view class='city-title'>{{index}}</view>
-          <view class='cityList'>
-            <block wx:for='{{item}}' wx:for-item='innerItem' wx:key='{{innerItem.id}}'>
-              <text class='city-item' bindtap='onTapCity'>{{innerItem.name}}</text>
-            </block>
+    <view class='city-area'>
+      <view class='city-title'>猜你想找</view>
+      <view class='cityList'>
+        <block wx:for='{{hotCities}}' wx:for-item='item' wx:key='{{item.id}}'>
+          <text class='city-item' bindtap='onTapCity'>{{item.name}}</text>
+        </block>
+      </view>
+      <view class='cityList' display='none'>
+        <block wx:for='{{cities}}' wx:for-item='item' wx:key='{{index}}'>
+          <view class='city-area'>
+            <view class='city-title'>{{index}}</view>
+            <view class='cityList'>
+              <block wx:for='{{item}}' wx:for-item='innerItem' wx:key='{{innerItem.id}}'>
+                <text class='city-item' bindtap='onTapCity'>{{innerItem.name}}</text>
+              </block>
+            </view>
           </view>
-        </view>
-      </block>
+        </block>
+      </view>
     </view>
   </view>
+  <!-- </scroll-view> -->
 </view>
