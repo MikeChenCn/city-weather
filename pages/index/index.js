@@ -126,8 +126,7 @@ Page({
       var that = this;
       this.getCityCoordinate(this.data.targetCity); //实现城市坐标查询
     }
-  },
-  
+  }, 
   onToCityList() {
     wx.navigateTo({
       url: '../city/city',
