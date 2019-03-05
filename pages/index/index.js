@@ -60,9 +60,6 @@ Page({
         })
       }
     })
-    // this.getCurWeather();
-
-    
   },
   onShareAppMessage: function () {
     return {
