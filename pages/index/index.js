@@ -10,7 +10,7 @@ Page({
   },
   onLoad: function(options) {
     var that=this;
-    //用户拒绝访问位置后的
+    //用户拒绝访问位置后，引导用户重新设置访问位置权限
     wx.getLocation({
       success: function(res) {
         console.log(res)
